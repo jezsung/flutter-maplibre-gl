@@ -2904,6 +2904,10 @@ class MapLibreMapController: NSObject, FlutterPlatformView, MLNMapViewDelegate, 
         mapView.logoView.isHidden = !logoEnabled
     }
 
+    func setAttributionButtonEnabled(attributionButtonEnabled: Bool) {
+        mapView.attributionButton.isHidden = !attributionButtonEnabled
+    }
+
     func setLogoViewPosition(position: MLNOrnamentPosition) {
         mapView.logoViewPosition = position
     }

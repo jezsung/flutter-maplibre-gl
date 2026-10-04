@@ -150,6 +150,11 @@ class MapLibreMapBuilder implements MapLibreMapOptionsSink {
   }
 
   @Override
+  public void setAttributionButtonEnabled(boolean attributionButtonEnabled) {
+    options.attributionEnabled(attributionButtonEnabled);
+  }
+
+  @Override
   public void setLogoViewGravity(int gravity) {
      switch (gravity) {
       case 0:

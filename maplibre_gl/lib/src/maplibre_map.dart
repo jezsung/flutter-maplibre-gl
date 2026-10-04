@@ -39,6 +39,7 @@ class MapLibreMap extends StatefulWidget {
     this.logoViewMargins,
     this.compassViewPosition,
     this.compassViewMargins,
+    this.attributionButtonEnabled = true,
     this.attributionButtonPosition = AttributionButtonPosition.bottomRight,
     this.attributionButtonMargins,
     this.attributionButtonColor,
@@ -257,6 +258,13 @@ class MapLibreMap extends StatefulWidget {
 
   /// Set the layout margins for the Compass
   final Point? compassViewMargins;
+
+  /// True if the MapLibre attribution (i) button should be shown on the map.
+  /// Defaults to true. If you hide it, credit your data sources elsewhere in
+  /// the app.
+  ///
+  /// Has no effect on Web.
+  final bool attributionButtonEnabled;
 
   /// Set the position for the MapLibre Attribution Button
   /// When set to null, the default value of the underlying MapLibre libraries is used,
@@ -608,6 +616,7 @@ class MapLibreMapOptions {
     this.logoViewMargins,
     this.compassViewPosition,
     this.compassViewMargins,
+    this.attributionButtonEnabled,
     this.attributionButtonPosition,
     this.attributionButtonMargins,
     this.attributionButtonColor,
@@ -644,6 +653,7 @@ class MapLibreMapOptions {
         logoViewMargins: map.logoViewMargins,
         compassViewPosition: map.compassViewPosition,
         compassViewMargins: map.compassViewMargins,
+        attributionButtonEnabled: map.attributionButtonEnabled,
         attributionButtonPosition: map.attributionButtonPosition,
         attributionButtonMargins: map.attributionButtonMargins,
         attributionButtonColor: map.attributionButtonColor,
@@ -690,6 +700,8 @@ class MapLibreMapOptions {
   final CompassViewPosition? compassViewPosition;
 
   final Point? compassViewMargins;
+
+  final bool? attributionButtonEnabled;
 
   final AttributionButtonPosition? attributionButtonPosition;
 
@@ -758,6 +770,7 @@ class MapLibreMapOptions {
     addIfNonNull('logoViewMargins', pointToArray(logoViewMargins));
     addIfNonNull('compassViewPosition', compassViewPosition?.index);
     addIfNonNull('compassViewMargins', pointToArray(compassViewMargins));
+    addIfNonNull('attributionButtonEnabled', attributionButtonEnabled);
     addIfNonNull('attributionButtonPosition', attributionButtonPosition?.index);
     addIfNonNull(
       'attributionButtonMargins',

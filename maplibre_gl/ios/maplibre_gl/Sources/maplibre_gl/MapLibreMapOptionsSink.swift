@@ -15,6 +15,7 @@ protocol MapLibreMapOptionsSink {
     func setMyLocationTrackingMode(myLocationTrackingMode: MLNUserTrackingMode)
     func setMyLocationRenderMode(myLocationRenderMode: MyLocationRenderMode)
     func setLogoEnabled(logoEnabled: Bool)
+    func setAttributionButtonEnabled(attributionButtonEnabled: Bool)
     func setLogoViewPosition(position: MLNOrnamentPosition)
     func setLogoViewMargins(x: Double, y: Double)
     func setCompassViewPosition(position: MLNOrnamentPosition)

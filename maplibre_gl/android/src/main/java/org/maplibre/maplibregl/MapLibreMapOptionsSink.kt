@@ -38,6 +38,8 @@ internal interface MapLibreMapOptionsSink {
 
     fun setLogoEnabled(logoEnabled: Boolean)
 
+    fun setAttributionButtonEnabled(attributionButtonEnabled: Boolean)
+
     fun setLogoViewGravity(gravity: Int)
 
     fun setLogoViewMargins(x: Int, y: Int)
