@@ -2678,11 +2678,11 @@ class MapLibreMapController: NSObject, FlutterPlatformView, MLNMapViewDelegate, 
      *  MapLibreMapOptionsSink
      */
     func setCameraTargetBounds(bounds: MLNCoordinateBounds?) {
-        let bounds = bounds ?? MLNCoordinateBounds(
-            sw: CLLocationCoordinate2D(latitude: -90, longitude: -180),
-            ne: CLLocationCoordinate2D(latitude: 90, longitude: 180)
-        )
-        mapView.maximumScreenBounds = bounds;
+        // Unbounded leaves the SDK default alone. maximumScreenBounds has no
+        // "no limit" value: world bounds still clamp longitude to [-180, 180]
+        // and stop the map panning across the antimeridian.
+        guard let bounds = bounds else { return }
+        mapView.maximumScreenBounds = bounds
     }
 
     func setCompassEnabled(compassEnabled: Bool) {
